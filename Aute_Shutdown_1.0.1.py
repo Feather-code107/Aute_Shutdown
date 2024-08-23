@@ -24,14 +24,15 @@ while not Button == 0:  #判断对话框选项
         sys.exit()
     elif Button == '下一步':  #下一步按钮，显示第二次警告
         Button = 0
-        Button = gui.buttonbox(msg='This is the last warning! Do you want to continue?',title = 'Warning - Aute Shutdown V1.0.1',choices=('退出程序','下一步'))
+        Button = gui.buttonbox(msg='这是最后一次警告！您要继续吗？',title = '警告 - Aute Shutdown V1.0.1',choices=('退出程序','下一步'))
         #第二次警告
-        while not Button == 0:  #退出按钮，结束程序
-            if Button == '退出程序':
-                gui.msgbox('点击 “OK” 退出程序。')
-                sys.exit()
-            elif Button == '下一步':  #下一步按钮，启动程序
-                break
+        break
+while not Button == 0:  #退出按钮，结束程序
+    if Button == '退出程序':
+        gui.msgbox('点击 “OK” 退出程序。')
+        sys.exit()
+    elif Button == '下一步':  #下一步按钮，启动程序
+        break
 PromptTime = int(gui.enterbox(msg='请设置提示时间。（输入整数，单位：分钟）',title='设置提示时间 - Aute Shutdown 1.0.1')) * 60
 #输入提示时间（分钟），并转换为整数秒数
 SRTime = int(gui.enterbox(msg='请设置提示后关机 & 重启的时间. (输入整数，单位：秒)',title='设置提示后关机 & 重启的时间 - Aute Shutdown V1.0.1'))
